@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조적가상클래스</title>
+    <style>
+        p:first-child{
+            color: rgb(124, 236, 124);
+            background-color: rgb(48, 10, 10);
+        }
+        p:last-child{
+            color: white;
+            background-color: black;
+        }
+        p:not(:last-child, :first-child){
+            color: blue
+        } 
+    </style>
+</head>
+
+<body>
+    <!-- (div>p{first-child}*3)*2 -->
+    <div>
+        <p>first-child입니다</p>
+        <p>first-child가 아닙니다</p>
+        <p>first-child가 아닙니다</p>
+        <p>first-child가 아닙니다. last입니다.</p>
+    </div>
+    <div>
+        <p>first-child입니다</p>
+        <p>first-child가 아닙니다</p>
+        <p>first-child가 아닙니다</p>
+        <p>first-child가 아닙니다. last입니다.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신상품 목록</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Grandiflora+One&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        .box {
+            margin-left: 30px; 
+            margin-right: 30px; 
+            background: url("https://images.unsplash.com/photo-1483043012503-8a8849b4c949?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D");
+        }
+        h1 {
+            height: 50px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.178);
+            color: rgba(0, 0, 0, 0.801);
+            font-family: "Single Day", cursive;
+            font-size: 2vw;
+
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        li {
+            width: 400px;
+            height: 300px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: "Single Day", cursive;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        li:hover {
+            transform: scale(102%)
+        }
+
+        .prod-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            
+        }
+        h1 a {
+            color: #4b1313bb;
+            text-decoration: none;
+        }
+        h1 a:hover {
+            text-decoration: not underline;
+        }
+        .prod-list li {
+            position: relative;
+        }
+        .prod-list .caption {
+            position: absolute;
+            top: 350px;
+            width: 400px;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.418);
+            color: rgba(255, 255, 255, 0.918);
+            z-index: 10;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .prod-list li:hover .caption {
+            opacity: 1;
+            transform: translateY(-200px);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>
+            <a href="ex06-08.html">
+                신상품 목록
+            </a>
+        </h1>
+        
+        <!-- ul.prod-list>(li>img+div.caption>h2{상품$}+p{상품$ 설명텍스트}+p{가격: $1,111원})*9 -->
+        <ul class="prod-list">
+            <div>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKC6ftGseBVwjXL0_4sS0jV3H9FflnbVBDBw&s">
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKC6ftGseBVwjXL0_4sS0jV3H9FflnbVBDBw&s"
+                        alt="" />
+                    <div class="caption">
+                        <h2>상품1</h2>
+                        <p>상품1 설명텍스트</p>
+                        <p>가격: 11,111원</p>
+                    </div>
+                </li>
+            </a>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzLYpKa4WDedDjzMfuATtENDHeG9s1ulQTIA&s">
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzLYpKa4WDedDjzMfuATtENDHeG9s1ulQTIA&s"
+                        alt="" />
+                    <div class="caption">
+                        <h2>상품2</h2>
+                        <p>상품2 설명텍스트</p>
+                        <p>가격: 21,111원</p>
+                    </div>
+                </li>
+            </a>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdtdxdClLxTrODabvS6G8xj6Yd1wrOIlwBXQ&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품3</h2>
+                    <p>상품3 설명텍스트</p>
+                    <p>가격: 31,111원</p>
+                </div>
+            </li>
+        </div>
+        <div>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-0hXOcGnkf8qFQfLwhqZxAveBcbhCrg4MA&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품4</h2>
+                    <p>상품4 설명텍스트</p>
+                    <p>가격: 41,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKZ0FxSm1iaolCMok_AnzczeqQkl5s2u8bzg&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품5</h2>
+                    <p>상품5 설명텍스트</p>
+                    <p>가격: 51,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtoOBREWXkiMFXcAxtfQ937iKeFFR8endpLg&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품6</h2>
+                    <p>상품6 설명텍스트</p>
+                    <p>가격: 61,111원</p>
+                </div>
+            </li>
+        </div>
+        <div>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW9j2AmGHZh0SAAI5_AFUAGweeowEUfgAI_A&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품7</h2>
+                    <p>상품7 설명텍스트</p>
+                    <p>가격: 71,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYr6tJg-KqZ2A4KiunsJvx_kZneU6hwG87IA&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품8</h2>
+                    <p>상품8 설명텍스트</p>
+                    <p>가격: 81,111원</p>
+                </div>
+            </li>
+            <li>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1EFD3ev80knck0-VYFls3KQiqg2a5_1p_PA&s"
+                    alt="" />
+                <div class="caption">
+                    <h2>상품9</h2>
+                    <p>상품9 설명텍스트</p>
+                    <p>가격: 91,111원</p>
+                </div>
+            </li>
+        </div>
+        </ul>
+    </div>
+</body>
+
+</html>

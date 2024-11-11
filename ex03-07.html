@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>가상선택자</title>
+        <style>
+            a{
+                color: green;
+            }
+            a:active{
+                color: red;
+            }
+            input:active{
+                color: rgb(0, 0, 0);
+                background-color: rgb(199, 123, 199)!important;
+                border: 1px solid rgb(59, 58, 58)!important;
+            }
+            input:disabled{
+                background-color: gray;
+            }
+            a:visited{
+                color: lime;
+            }
+            button:active{
+                color: rgb(201, 5, 5);
+                background-color: rgb(255, 255, 255);
+            }
+            div{
+                background-color: antiquewhite;
+                width: 20px;
+                height: 20px;
+                margin: 2px;
+            }
+            div:hover{
+                width: 50px;
+                background-color: bisque;
+            }
+            input[type]:checked+label{
+                color: blue;
+                
+            }
+            input[type]:not(checked)+label{
+                color: red;
+                text-decoration: line-through;
+            }
+
+        </style>
+    </head>
+    <body>
+        <a href="https://naver.com">네이버</a>
+        <input type="button" value="눌러보세요" style="background-color: rgb(255, 180, 255); border: 1px solid rgb(206, 206, 206);"/>
+        <button>눌러보세요</button>
+        <hr/>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <hr/>
+        <input type="checkbox" id="eat"/>
+        <label for="eat">간식</label>
+        <input type="checkbox" id="meal"/>
+        <label for="meal">식사</label>
+        <input type="radio" name="loc"/>
+        <label for="">한국</label>
+        <input type="radio" name="loc" />
+        <label for="">해외</label>
+    </body>
+</html> 

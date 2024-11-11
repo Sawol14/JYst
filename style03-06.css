@@ -1,0 +1,22 @@
+body {
+    background-color: pink;
+}
+h1{
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+span {
+    padding: 5px;
+}
+@media(max-width:1200px){
+    body{
+        color:white;
+        background:url(https://th.bing.com/th/id/R.58c8d37dc1b2b49f8c33609ae49d3887?rik=2T%2fbUe4IwL9kPw&riu=http%3a%2f%2fblogfiles.naver.net%2f20160115_112%2fleesujae17_1452850532944C4iJp_JPEG%2f18.jpg&ehk=%2b%2fJRmbBIRF9p9I2Bh%2f6KXdGebW%2bkhmZtK%2bl1VYnzHq0%3d&risl=&pid=ImgRaw&r=0);
+    }
+}
+@media(max-width:600px){
+    body{
+        color: yellow;
+        background:url(https://th.bing.com/th/id/OIP.xC9PH2P_BPDr-Y70j0xphAHaEK?rs=1&pid=ImgDetMain) no-repeat content-box;
+    }
+}
