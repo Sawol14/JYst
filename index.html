@@ -1,57 +1,176 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Document</title>
-  
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 특강</title>
+</head>
+<style>
+    h1 {
+        text-align: center;
+        color: brown;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    th {
+        padding: 30px;
+    }
+
+    #preview {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.089);
+        color: white;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        cursor: pointer;
+    }
+
+    #previewIframe {
+        background-color: rgb(255, 255, 255);
+        width: 50%;
+        height: 80%;
+        border: none;
+        margin-top: 5%;
+        margin-left: 25%;
+    }
+    .link-box {
+        cursor: pointer;
+    }
+
+    .link-box:hover {
+        background-color: #e0e0e0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    td {
+        width: 16%;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
+<body>
     <h1>HTML 특강</h1>
     <h2>데이터크롤링 대비</h2>
-    <!-- table>tr>th{$일차}*3^tr>(td{예제들})*3 -->
-    <table>
-      <tr>
-        <th>1일차</th>
-        <th>2일차</th>
-        <th>3일차</th>
-      </tr>
-      <tr>
-        <td>
-          <a href="ex01-01.html">예제 1</a><br />
-          <a href="ex01-02.html">예제 2</a><br />
-          <a href="ex01-03.html">예제 3</a><br />
-          <a href="ex01-04.html">예제 4</a><br />
-          <a href="ex01-05.html">예제 5</a><br />
-          <a href="ex01-06.html">예제 6</a><br />
-          <a href="ex01-07.html">예제 7</a><br />
-          <a href="ex01-08.html">예제 8</a><br />
-        </td>
-        <td>
-          <a href="ex02-01.html">예제 1</a><br />
-          <a href="ex02-02.html">예제 2</a><br />
-          <a href="ex02-03.html">예제 3</a><br />
-          <a href="ex02-04.html">예제 4</a><br />
-          <a href="ex02-05.html">예제 5</a><br />
-          <a href="ex02-06.html">예제 6</a><br />
-        </td>
-      </tr>
-    </table>
+    <div id="preview" onclick="closePreview(event)">
+        <iframe id="previewIframe" src="" onload="hideLoadingMessage()"></iframe>
+    </div>
+    </div>
 
-    <!-- (h3>a[href="ex01-0$.html"]{예제 $})*8  -->
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <!-- (h3>a[href="ex02-0$.html"]{예제 $})*6 -->
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
-  </body>
+    <table>
+        <tr>
+            <th>1일차</th>
+            <th>2일차</th>
+            <th>3일차</th>
+            <th>4일차</th>
+            <th>5일차</th>
+            <th>6일차</th>
+        </tr>
+        <tr>
+            <td>
+                <a href="ex01-01.html" class="link-box" onclick="showLinkPreview(event, 'ex01-01.html')">예제 1</a><br />
+                <a href="ex01-02.html" class="link-box" onclick="showLinkPreview(event, 'ex01-02.html')">예제 2</a><br />
+                <a href="ex01-03.html" class="link-box" onclick="showLinkPreview(event, 'ex01-03.html')">예제 3</a><br />
+                <a href="ex01-04.html" class="link-box" onclick="showLinkPreview(event, 'ex01-04.html')">예제 4</a><br />
+                <a href="ex01-05.html" class="link-box" onclick="showLinkPreview(event, 'ex01-05.html')">예제 5</a><br />
+                <a href="ex01-06.html" class="link-box" onclick="showLinkPreview(event, 'ex01-06.html')">예제 6</a><br />
+                <a href="ex01-07.html" class="link-box" onclick="showLinkPreview(event, 'ex01-07.html')">예제 7</a><br />
+                <a href="ex01-08.html" class="link-box" onclick="showLinkPreview(event, 'ex01-08.html')">예제 8</a><br />
+            </td>
+            <td>
+                <a href="ex02-01.html" class="link-box" onclick="showLinkPreview(event, 'ex02-01.html')">예제 1</a><br />
+                <a href="ex02-02.html" class="link-box" onclick="showLinkPreview(event, 'ex02-02.html')">예제 2</a><br />
+                <a href="ex02-03.html" class="link-box" onclick="showLinkPreview(event, 'ex02-03.html')">예제 3</a><br />
+                <a href="ex02-04.html" class="link-box" onclick="showLinkPreview(event, 'ex02-04.html')">예제 4</a><br />
+                <a href="ex02-05.html" class="link-box" onclick="showLinkPreview(event, 'ex02-05.html')">예제 5</a><br />
+                <a href="ex02-06.html" class="link-box" onclick="showLinkPreview(event, 'ex02-06.html')">예제 6</a><br />
+            </td>
+            <td>
+                <a href="ex03-01.html" class="link-box" onclick="showLinkPreview(event, 'ex03-01.html')">예제 1</a><br />
+                <a href="ex03-02.html" class="link-box" onclick="showLinkPreview(event, 'ex03-02.html')">예제 2</a><br />
+                <a href="ex03-03.html" class="link-box" onclick="showLinkPreview(event, 'ex03-03.html')">예제 3</a><br />
+                <a href="ex03-04.html" class="link-box" onclick="showLinkPreview(event, 'ex03-04.html')">예제 4</a><br />
+                <a href="ex03-05.html" class="link-box" onclick="showLinkPreview(event, 'ex03-05.html')">예제 5</a><br />
+                <a href="ex03-06.html" class="link-box" onclick="showLinkPreview(event, 'ex03-06.html')">예제 6</a><br />
+                <a href="ex03-07.html" class="link-box" onclick="showLinkPreview(event, 'ex03-07.html')">예제 7</a><br />
+                <a href="ex03-08.html" class="link-box" onclick="showLinkPreview(event, 'ex03-08.html')">예제 8</a><br />
+                <a href="ex03-09.html" class="link-box" onclick="showLinkPreview(event, 'ex03-09.html')">예제 9</a><br />
+                <a href="ex03-10.html" class="link-box" onclick="showLinkPreview(event, 'ex03-10.html')">예제 10</a><br />
+                <a href="ex03-11.html" class="link-box" onclick="showLinkPreview(event, 'ex03-11.html')">예제 11</a><br />
+            </td>
+            <td>
+                <a href="ex04-01.html" class="link-box" onclick="showLinkPreview(event, 'ex04-01.html')">예제 1</a><br />
+                <a href="ex04-02.html" class="link-box" onclick="showLinkPreview(event, 'ex04-02.html')">예제 2</a><br />
+                <a href="ex04-03.html" class="link-box" onclick="showLinkPreview(event, 'ex04-03.html')">예제 3</a><br />
+                <a href="ex04-04.html" class="link-box" onclick="showLinkPreview(event, 'ex04-04.html')">예제 4</a><br />
+                <a href="ex04-05.html" class="link-box" onclick="showLinkPreview(event, 'ex04-05.html')">예제 5</a><br />
+                <a href="ex04-06.html" class="link-box" onclick="showLinkPreview(event, 'ex04-06.html')">예제 6</a><br />
+                <a href="ex04-07.html" class="link-box" onclick="showLinkPreview(event, 'ex04-07.html')">예제 7</a><br />
+                <a href="ex04-08.html" class="link-box" onclick="showLinkPreview(event, 'ex04-08.html')">예제 8</a><br />
+            </td>
+            <td>
+                <a href="ex05-01.html" class="link-box" onclick="showLinkPreview(event, 'ex05-01.html')">예제 1</a><br />
+                <a href="ex05-01a.html" class="link-box" onclick="showLinkPreview(event, 'ex05-01a.html')">예제 1a</a><br />
+                <a href="ex05-02.html" class="link-box" onclick="showLinkPreview(event, 'ex05-02.html')">예제 2</a><br />
+                <a href="ex05-03.html" class="link-box" onclick="showLinkPreview(event, 'ex05-03.html')">예제 3</a><br />
+                <a href="ex05-04.html" class="link-box" onclick="showLinkPreview(event, 'ex05-04.html')">예제 4</a><br />
+                <a href="ex05-05.html" class="link-box" onclick="showLinkPreview(event, 'ex05-05.html')">예제 5</a><br />
+                <a href="ex05-06.html" class="link-box" onclick="showLinkPreview(event, 'ex05-06.html')">예제 6</a><br />
+                <a href="ex05-07.html" class="link-box" onclick="showLinkPreview(event, 'ex05-07.html')">예제 7</a><br />
+                <a href="ex05-08.html" class="link-box" onclick="showLinkPreview(event, 'ex05-08.html')">예제 8</a><br />
+            </td>
+            <td>
+                <a href="ex06-01.html" class="link-box" onclick="showLinkPreview(event, 'ex06-01.html')">예제 1</a><br />
+                <a href="ex06-02.html" class="link-box" onclick="showLinkPreview(event, 'ex06-02.html')">예제 2</a><br />
+                <a href="ex06-03.html" class="link-box" onclick="showLinkPreview(event, 'ex06-03.html')">예제 3</a><br />
+                <a href="ex06-04.html" class="link-box" onclick="showLinkPreview(event, 'ex06-04.html')">예제 4</a><br />
+                <a href="ex06-05.html" class="link-box" onclick="showLinkPreview(event, 'ex06-05.html')">예제 5</a><br />
+                <a href="ex06-06.html" class="link-box" onclick="showLinkPreview(event, 'ex06-06.html')">예제 6</a><br />
+                <a href="ex06-07.html" class="link-box" onclick="showLinkPreview(event, 'ex06-07.html')">예제 7</a><br />
+                <a href="ex06-08.html" class="link-box" onclick="showLinkPreview(event, 'ex06-08.html')">예제 8</a><br />
+                <a href="ex06-09.html" class="link-box" onclick="showLinkPreview(event, 'ex06-09.html')">예제 9</a><br />
+            </td>
+        </tr>
+    </table>
+    <script>
+        function showLinkPreview(event, link) {
+            event.preventDefault();
+
+            document.getElementById('preview').style.display = 'block';
+
+            var iframe = document.getElementById('previewIframe');
+            iframe.src = link;
+        }
+
+        function hideLoadingMessage() {
+            document.getElementById('previewContent').style.display = 'none';
+        }
+
+        function closePreview(event) {
+            if (event.target === document.getElementById('preview')) {
+                document.getElementById('preview').style.display = 'none';
+                document.getElementById('previewIframe').src = "";
+            }
+        }
+    </script>
+</body>
+
 </html>
