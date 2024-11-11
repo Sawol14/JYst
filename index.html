@@ -26,7 +26,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.089);
+        background-color: rgba(0, 0, 0, 0.432);
         color: white;
         border-radius: 10px;
         width: 100%;
@@ -59,6 +59,7 @@
     td {
         width: 16%;
         text-align: center;
+        vertical-align: top;
     }
 
     a {
@@ -71,7 +72,7 @@
     <h1>HTML 특강</h1>
     <h2>데이터크롤링 대비</h2>
     <div id="preview" onclick="closePreview(event)">
-        <iframe id="previewIframe" src="" onload="hideLoadingMessage()"></iframe>
+        <iframe id="previewIframe" src=""></iframe>
     </div>
     </div>
 
@@ -158,10 +159,6 @@
 
             var iframe = document.getElementById('previewIframe');
             iframe.src = link;
-        }
-
-        function hideLoadingMessage() {
-            document.getElementById('previewContent').style.display = 'none';
         }
 
         function closePreview(event) {
