@@ -134,4 +134,9 @@ C:\JAVA\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\work\Catal
 URL로 값을넘겨줄 때 오류방지
 encodeURIComponent(row.manager_name)
 
+gitinit
+git
+git remote add origin https://github.com/Sawol14/JSst.git
+git config --global user.email "jy114p@gmail.com"
+git config --global user.name "Sawol14"
 */
