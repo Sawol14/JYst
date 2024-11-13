@@ -14,7 +14,7 @@
         crossorigin="anonymous"></script>
 
     <script>
-         function showLinkPreview(event, link) {
+        function showLinkPreview(event, link) {
             event.preventDefault();
             document.getElementById('preview').style.display = 'block';
             var iframe = document.getElementById('previewIframe');
@@ -29,15 +29,15 @@
         }
         async function fetchTitle(url) {
             try {
-                const response = await fetch(url);  
-                const text = await response.text(); 
+                const response = await fetch(url);
+                const text = await response.text();
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(text, "text/html"); 
-                const title = doc.querySelector("title").innerText; 
-                return title; 
+                const doc = parser.parseFromString(text, "text/html");
+                const title = doc.querySelector("title").innerText;
+                return title;
             } catch (error) {
                 console.error("제목을 가져오는 중 오류 발생:", error);
-                return "제목 로드 실패"; 
+                return "제목 로드 실패";
             }
         }
 
@@ -45,7 +45,7 @@
             let i = 0;
             let j = 0;
             let url = '';
-            let st = [8, 6, 11, 8, 9, 9];  
+            let st = [8, 6, 11, 8, 9, 9];
             let list = '';
 
             list += `<h1>HTML 특강</h1>
@@ -53,16 +53,19 @@
                     <div id="preview" onclick="closePreview(event)">
                     <iframe id="previewIframe" src=""></iframe>
                     </div>`;
-            list += '<table>';
-            list += '<tr>';
-            
-            for (let i = 0; i < st.length; i++) {
-                list += `<th>${i + 1}일차</th>`;
-            }
-            list += '</tr>';
-
-            list += '<tr>';
+            list += '<div class="table-container">'
             for (i = 0; i < st.length; i++) {
+                list += '<table>';
+                list += '<tbody>';
+                list += '<tr>';
+                list += '<thead>';
+                list += `<th colspan="2">${i + 1}일차</th>`;
+                list += '</thead>';
+                list += '<td>';
+                for (j = 0; j < st[i]; j++) {
+                    list += (j < 9) ? `0${i + 1}-0${j + 1}<br />` : `0${i + 1}-${j + 1}<br />`;
+                }
+                list += '</td>';
                 list += '<td>';
                 for (j = 0; j < st[i]; j++) {
                     url = (j < 9) ? `ex0${i + 1}-0${j + 1}.html` : `ex0${i + 1}-${j + 1}.html`;
@@ -70,11 +73,14 @@
                     list += `<a href="${url}" class="link-box" onclick="showLinkPreview(event, '${url}')">${title}</a><br />`;
                 }
                 list += '</td>';
-            }
-            list += '</tr>';
-            list += '</table>';
+                list += '</tr>';
+                list += '</tbody>';
+                list += '</table>';
 
-            document.body.innerHTML = list; 
+            }
+
+            list += '</div>';
+            document.body.innerHTML = list;
         }
 
         generateContent(); 
@@ -95,9 +101,6 @@
             background-color: aliceblue;
         }
 
-        th {
-            padding: 10px;
-        }
 
         #preview {
             display: none;
@@ -131,16 +134,25 @@
             background-color: #e0e0e0;
         }
 
+        .table-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
         table {
-            width: 100%;
+            width: 25%;
+            height: 300px;
             border-collapse: collapse;
+            overflow: hidden;
         }
 
         td {
-            width: 16%;
             text-align: center;
             vertical-align: top;
         }
+
         td,
         th {
             border: 1px solid indigo;
@@ -154,9 +166,7 @@
 </head>
 
 <body>
-    <script>
-       
-    </script>
+
 </body>
 
 </html>
